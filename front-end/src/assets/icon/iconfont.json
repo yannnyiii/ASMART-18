@@ -1,0 +1,30 @@
+{
+  "id": "2544441",
+  "name": "bms",
+  "font_family": "iconfont",
+  "css_prefix_text": "myicon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "795509",
+      "name": "眼睛",
+      "font_class": "ai-eye",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "21205141",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "21205143",
+      "name": "注册",
+      "font_class": "zhuce",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    }
+  ]
+}

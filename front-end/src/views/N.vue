@@ -1,6 +1,6 @@
 <template>
     <div class="首页">
-        <div style="background-color: #eee; height:52px;">
+        <div class="navigation">
         <i class="el-icon-s-management" style="float:left; margin:15px;"></i>
          <el-dropdown size="small" style="float: left;">
             <el-button class="btn" size="small">
@@ -28,15 +28,15 @@
            
   
   
-            <el-button plain class="right btn" size="small">登录</el-button>
-            <el-button plain class="border right btn" size="small">注册</el-button>
+            <el-button plain class="right btn" size="small" icon="iconfont myicon-wode"> 登录</el-button>
+            <el-button plain class="right btn" size="small" icon="iconfont myicon-zhuce"> 注册</el-button>
         
             <el-input placeholder="请输入内容" v-model="input3"  size="small"
                 class="right" style="width:200px;margin-top:9px;margin-right:20px;">
                
                 <el-button slot="append" icon="el-icon-search"></el-button>
             </el-input>
-            </div>
+        </div>
         <div class="title">
             HELLO BOOK
         </div>
@@ -53,7 +53,7 @@
             <div class="right">
                 <el-input type="text" placeholder="Your email..." style="width: 200px;"/>
                 <span>
-                    <el-button class="btn">Sign up with your email</el-button>
+                    <el-button class="btn" style="background-color: rgb(81, 143, 194); color: white;">Sign up with your email</el-button>
                 </span>
             </div>
         </div>
@@ -76,16 +76,31 @@ export default {
 
 <style scoped>
 
+.首页{
+    background-image: url("../assets/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.navigation{
+    background-color: #eee; 
+    height: 52px; 
+    position: fixed; 
+    width: 100%;
+}
 .t{
     border: 1px solid black;
 }
 .group{
-   
     display: inline;
 }
 .btn{
-  padding: 8px 15px;
- 
+  padding: 8px 10px;
   vertical-align: center;
   margin: 10px;
     border: 1px solid #eee;
@@ -97,20 +112,7 @@ export default {
     background-color: #eee;
     color: black;
 }
-.border{
-    border: 1px solid black;
-}
-.首页{
-    
-    background-image: url("../assets/background.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-}
+
 
 hr{
     margin-top: 0;
@@ -127,7 +129,7 @@ hr{
     text-align: center;
     font-weight: bold;
     font-size: 100px;
-    margin-top: 30px;
+    margin-top: 84px;
     letter-spacing: 9px;
 }
 .main{
