@@ -1,6 +1,5 @@
 <template>
-<html>
-    <body>
+    <div class="首页">
         <div style="background-color: #eee; height:52px;">
         <i class="el-icon-s-management" style="float:left; margin:15px;"></i>
          <el-dropdown size="small" style="float: left;">
@@ -37,16 +36,28 @@
                
                 <el-button slot="append" icon="el-icon-search"></el-button>
             </el-input>
-            
-          
+            </div>
+        <div class="title">
+            HELLO BOOK
         </div>
-
-
-
-
-
-    </body>
-</html>
+        <div class="right main">
+            <span style>书籍中自有命运</span><br>
+            <span class="right">——米兰·昆德拉</span><br>
+            <div style="height: 50px;"></div>
+            <span>书籍是巨大的力量</span><br>
+            <span class="right">——列宁</span><br>
+            <div style="height: 50px;"></div>
+            <span>和书籍生活,在一起，永远不会叹气</span><br>
+            <span class="right">——罗曼·罗兰</span><br>
+            <div style="height: 130px;"></div>
+            <div class="right">
+                <el-input type="text" placeholder="Your email..." style="width: 200px;"/>
+                <span>
+                    <el-button class="btn">Sign up with your email</el-button>
+                </span>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
 export default {
@@ -62,12 +73,8 @@ export default {
   }
 }    
 </script>
-<style scoped>
 
-*{
-    margin: 0;
-    padding: 0;
-}
+<style scoped>
 
 .t{
     border: 1px solid black;
@@ -93,7 +100,7 @@ export default {
 .border{
     border: 1px solid black;
 }
-body,html{
+.首页{
     
     background-image: url("../assets/background.jpg");
     background-repeat: no-repeat;
@@ -101,7 +108,8 @@ body,html{
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    height: 1000px;
+    height: 100%;
+    overflow: auto;
 }
 
 hr{
@@ -133,15 +141,14 @@ hr{
     
 }
 
-  .el-dropdown {
+.el-dropdown {
     vertical-align: center;
     height: 50px;
-  }
-  .el-dropdown + .el-dropdown {
+}
+.el-dropdown + .el-dropdown {
     margin-left: 15px;
-  }
-  .el-icon-arrow-down {
+}
+.el-icon-arrow-down {
     font-size: 12px;
-  }
-
+}
 </style>
