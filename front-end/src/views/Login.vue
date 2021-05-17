@@ -10,10 +10,12 @@
         ref="loginForm"
         label-position="left"
       >
-        <div style="text-align: center">
-          <svg-icon icon-class="login-mall" style="width: 56px;height: 56px;color: #409EFF"></svg-icon>
-        </div>
-        <h2 class="login-title">登录</h2>
+        <router-link to="/N" class="back">
+          <i class="iconfont myicon-cha" style="font-size: 20px"></i>
+        </router-link>
+        <h2 class="login-title">
+          <i class="el-icon-s-management"></i>
+        登录</h2>
         <el-form-item prop="username">
           <el-input
             name="username"
@@ -39,19 +41,22 @@
             <span slot="prefix">
               <i class="iconfont myicon-mima1"></i>
             </span>
-            <span slot="suffix" @click="showPwd">
-              <i class="iconfont myicon-eye"></i>
+            <span slot="suffix" @click="showPwd" style="margin-right: 10px">
+              <i class="iconfont myicon-ai-eye"></i>
             </span>
           </el-input>
         </el-form-item>
-        <el-form-item style="margin-bottom: 60px">
+        <el-form-item>
           <el-button
-            style="width: 100%"
-            type="info"
+            style="width: 100%; font-weight: bold; font-size: 14px"
+            type="primary"
             :loading="loading"
             @click.native.prevent="handleLogin"
           >登录</el-button>
         </el-form-item>
+        <div class="new_user">  
+          <router-link to="/register" style="color: black">注册新用户</router-link>
+        </div>
       </el-form>
     </el-card>
   </div>
@@ -108,7 +113,7 @@ export default {
           return false;
         }
       });
-    }
+    },
   }
 };
 </script>
@@ -133,7 +138,10 @@ export default {
     padding-top: 84px;
     letter-spacing: 9px;
 }
-
+.back {
+  margin-left: 340px;
+  text-decoration:none;
+}
 .login-form-layout {
   left: 0;
   right: 0;
@@ -141,10 +149,13 @@ export default {
   margin: 50px auto;
   background:hsla(0,0%,100%,.6);
 }
-
 .login-title {
-  text-align: center;
-  font-family: "雅黑";
+  margin-top: 10px;
+  margin-left: -10px;
+  font-size: 25px;
+}
+.new_user {
+  margin-bottom: 40px;
 }
 
 </style>
