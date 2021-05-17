@@ -3,7 +3,7 @@
         <div class="navigation">
         <i class="el-icon-s-management" style="float:left; margin:15px;"></i>
          <el-dropdown size="small" style="float: left;">
-            <el-button class="btn" size="small">
+            <el-button class="btn" size="medium" style="font-family: ">
                 主页<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
             <el-dropdown-menu slot="dropdown" style="width:80px;">
@@ -14,7 +14,7 @@
         </el-dropdown-menu>
         </el-dropdown>  
          <el-dropdown size="small" style="float: left;margin-left:0;">
-            <el-button class="btn" size="small">
+            <el-button class="btn" size="medium">
                 更多<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
             <el-dropdown-menu slot="dropdown" style="width:80px;">
@@ -27,12 +27,13 @@
             
            
   
-  
-            <el-button plain class="right btn" size="small" icon="iconfont myicon-wode"> 登录</el-button>
+            <router-link to="/login">
+                <el-button plain class="right btn" size="small" icon="iconfont myicon-wode"> 登录</el-button>
+            </router-link>
             <el-button plain class="right btn" size="small" icon="iconfont myicon-zhuce"> 注册</el-button>
         
             <el-input placeholder="请输入内容" v-model="input3"  size="small"
-                class="right" style="width:200px;margin-top:9px;margin-right:20px;">
+                class="right" style="width:200px;margin-top:10px;margin-right:20px;">
                
                 <el-button slot="append" icon="el-icon-search"></el-button>
             </el-input>
@@ -63,7 +64,8 @@
 export default {
     data() {
         return {
-            meal: ''
+            meal: '',
+            input3: ''
         }
     },
   methods: {
@@ -100,15 +102,15 @@ export default {
     display: inline;
 }
 .btn{
-  padding: 8px 10px;
-  vertical-align: center;
-  margin: 10px;
+    padding: 8px 10px;
+    vertical-align: center;
+    margin: 10px;
     border: 1px solid #eee;
     background-color: #eee;
 
 }
 .btn:hover{
-     border: 1px solid black;
+    border: 1px solid black;
     background-color: #eee;
     color: black;
 }

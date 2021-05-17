@@ -1,17 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2544441 */
-  src: url('iconfont.woff2?t=1620871588044') format('woff2'),
-       url('iconfont.woff?t=1620871588044') format('woff'),
-       url('iconfont.ttf?t=1620871588044') format('truetype');
-}
-
-[class*=" el-icon-third"]/*这里有空格*/
-{
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  src: url('iconfont.woff2?t=1621251514009') format('woff2'),
+       url('iconfont.woff?t=1621251514009') format('woff'),
+       url('iconfont.ttf?t=1621251514009') format('truetype');
 }
 
 .iconfont {
@@ -20,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.myicon-mima1:before {
+  content: "\e64b";
+}
+
+.myicon-user:before {
+  content: "\e602";
+}
+
+.myicon-mima:before {
+  content: "\e64c";
 }
 
 .myicon-ai-eye:before {
