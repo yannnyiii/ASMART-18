@@ -1,8 +1,5 @@
 <template>
   <div class="login">
-    <div class="title">
-      HELLO BOOK
-    </div>
     <el-card class="login-form-layout">
       <el-form
         autocomplete="on"
@@ -10,9 +7,9 @@
         ref="loginForm"
         label-position="left"
       >
-        <router-link to="/N" class="back">
-          <i class="iconfont myicon-cha" style="font-size: 20px"></i>
-        </router-link>
+        <div class="back">
+          <i class="iconfont myicon-cha" style="font-size: 20px" @click="back"></i>
+        </div>
         <h2 class="login-title">
           <i class="el-icon-s-management"></i>
         登录</h2>
@@ -41,9 +38,6 @@
             <span slot="prefix">
               <i class="iconfont myicon-mima1"></i>
             </span>
-            <span slot="suffix" @click="showPwd" style="margin-right: 10px">
-              <i class="iconfont myicon-ai-eye"></i>
-            </span>
           </el-input>
         </el-form-item>
         <el-form-item>
@@ -64,7 +58,7 @@
  
 <script>
 export default {
-  name: "login",
+  name: "Login",
   data() {
     return {
       loginForm: {
@@ -114,40 +108,27 @@ export default {
         }
       });
     },
+    back () {
+      this.$parent.login_back();
+    }
   }
 };
 </script>
  
 <style scoped>
 
-.login {
-  background-image: url("../assets/background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  width: 100%;
-  height: 100%;
-}
-.title {   
-    font-family: S B;
-    color: rgb(59, 59, 59);
-    text-align: center;
-    font-weight: bold;
-    font-size: 100px;
-    padding-top: 84px;
-    letter-spacing: 9px;
-}
 .back {
   margin-left: 340px;
-  text-decoration:none;
+  text-decoration: none;
+  cursor: pointer;
 }
 .login-form-layout {
   left: 0;
   right: 0;
   width: 400px;
-  margin: 50px auto;
-  background:hsla(0,0%,100%,.6);
+  margin: 100px auto;
+  z-index: 2000;
+  background:hsla(0,0%,100%,1);
 }
 .login-title {
   margin-top: 10px;

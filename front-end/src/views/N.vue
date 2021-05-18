@@ -1,5 +1,7 @@
 <template>
     <div class="首页">
+        <div id="popLayer"></div>
+        <div id="popBox"><Login/></div>
         <div class="navigation">
         <i class="el-icon-s-management" style="float:left; margin:15px;"></i>
          <el-dropdown size="small" style="float: left;">
@@ -26,13 +28,10 @@
         </el-dropdown>  
             
            
-  
-            <router-link to="/login">
-                <el-button plain class="right btn" size="small" icon="iconfont myicon-wode"> 登录</el-button>
-            </router-link>
+            <el-button plain class="right btn" size="small" icon="iconfont myicon-wode" @click="login"> 登录</el-button>
             <el-button plain class="right btn" size="small" icon="iconfont myicon-zhuce"> 注册</el-button>
         
-            <el-input placeholder="请输入内容" v-model="input3"  size="small"
+            <el-input placeholder="请输入内容" v-model="input1"  size="small"
                 class="right" style="width:200px;margin-top:10px;margin-right:20px;">
                
                 <el-button slot="append" icon="el-icon-search"></el-button>
@@ -52,7 +51,7 @@
             <span class="right">——罗曼·罗兰</span><br>
             <div style="height: 130px;"></div>
             <div class="right">
-                <el-input type="text" placeholder="Your email..." style="width: 200px;"/>
+                <el-input type="text" placeholder="Your email..." style="width: 200px;" v-model="input2"/>
                 <span>
                     <el-button class="btn" style="background-color: rgb(81, 143, 194); color: white;">Sign up with your email</el-button>
                 </span>
@@ -61,18 +60,40 @@
     </div>
 </template>
 <script>
+import Login from '@/components/Login.vue';
+
 export default {
     data() {
         return {
             meal: '',
-            input3: ''
+            input1: '',
+            input2: ''
         }
     },
-  methods: {
-    getMeal() {
+    methods: {
+        getMeal() {
       
+        },
+        login () {
+
+        },
+        login () {
+            var popBox = document.getElementById("popBox");
+            var popLayer = document.getElementById("popLayer");
+            popBox.style.display = "block";
+            popLayer.style.display = "block";
+            popBox.style.opacity = 0.8;
+        },
+        login_back () {
+            var popBox = document.getElementById("popBox");
+            var popLayer = document.getElementById("popLayer");
+            popBox.style.display = "none";
+            popLayer.style.display = "none";
+        }
+    },
+    components: {
+        Login
     }
-  }
 }    
 </script>
 
@@ -155,4 +176,32 @@ hr{
 .el-icon-arrow-down {
     font-size: 12px;
 }
+
+#popLayer {
+    display: none;
+    background-color: #d4d4d4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+@keyframes fadeIn { /* 不用CSS动画实现,display会有影响 */
+    0% { opacity: 0 }
+    100% { opacity: 0.8 }
+}
+#popBox {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 11;
+    animation-name: fadeIn;
+    animation-duration: .6s;
+}
+
 </style>
