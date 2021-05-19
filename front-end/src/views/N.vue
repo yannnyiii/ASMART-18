@@ -1,9 +1,11 @@
 <template>
     <div class="首页">
-        <div style="background-color: #eee; height:52px;">
+        <div id="popLayer"></div>
+        <div id="popBox"><Login/></div>
+        <div class="navigation">
         <i class="el-icon-s-management" style="float:left; margin:15px;"></i>
          <el-dropdown size="small" style="float: left;">
-            <el-button class="btn" size="small">
+            <el-button class="btn" size="medium" style="font-family: ">
                 主页<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
             <el-dropdown-menu slot="dropdown" style="width:80px;">
@@ -14,7 +16,7 @@
         </el-dropdown-menu>
         </el-dropdown>  
          <el-dropdown size="small" style="float: left;margin-left:0;">
-            <el-button class="btn" size="small">
+            <el-button class="btn" size="medium">
                 更多<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
             <el-dropdown-menu slot="dropdown" style="width:80px;">
@@ -26,17 +28,15 @@
         </el-dropdown>  
             
            
-  
-  
-            <el-button plain class="right btn" size="small">登录</el-button>
-            <el-button plain class="border right btn" size="small">注册</el-button>
+            <el-button plain class="right btn" size="small" icon="iconfont myicon-wode" @click="login"> 登录</el-button>
+            <el-button plain class="right btn" size="small" icon="iconfont myicon-zhuce"> 注册</el-button>
         
-            <el-input placeholder="请输入内容" v-model="input3"  size="small"
-                class="right" style="width:200px;margin-top:9px;margin-right:20px;">
+            <el-input placeholder="请输入内容" v-model="input1"  size="small"
+                class="right" style="width:200px;margin-top:10px;margin-right:20px;">
                
                 <el-button slot="append" icon="el-icon-search"></el-button>
             </el-input>
-            </div>
+        </div>
         <div class="title">
             HELLO BOOK
         </div>
@@ -51,57 +51,54 @@
             <span class="right">——罗曼·罗兰</span><br>
             <div style="height: 130px;"></div>
             <div class="right">
-                <el-input type="text" placeholder="Your email..." style="width: 200px;"/>
+                <el-input type="text" placeholder="Your email..." style="width: 200px;" v-model="input2"/>
                 <span>
-                    <el-button class="btn">Sign up with your email</el-button>
+                    <el-button class="btn" style="background-color: rgb(81, 143, 194); color: white;">Sign up with your email</el-button>
                 </span>
             </div>
         </div>
     </div>
 </template>
 <script>
+import Login from '@/components/Login.vue';
+
 export default {
     data() {
         return {
-            meal: ''
+            meal: '',
+            input1: '',
+            input2: ''
         }
     },
-  methods: {
-    getMeal() {
+    methods: {
+        getMeal() {
       
+        },
+        login () {
+
+        },
+        login () {
+            var popBox = document.getElementById("popBox");
+            var popLayer = document.getElementById("popLayer");
+            popBox.style.display = "block";
+            popLayer.style.display = "block";
+        },
+        login_back () {
+            var popBox = document.getElementById("popBox");
+            var popLayer = document.getElementById("popLayer");
+            popBox.style.display = "none";
+            popLayer.style.display = "none";
+        }
+    },
+    components: {
+        Login
     }
-  }
 }    
 </script>
 
 <style scoped>
 
-.t{
-    border: 1px solid black;
-}
-.group{
-   
-    display: inline;
-}
-.btn{
-  padding: 8px 15px;
- 
-  vertical-align: center;
-  margin: 10px;
-    border: 1px solid #eee;
-    background-color: #eee;
-
-}
-.btn:hover{
-     border: 1px solid black;
-    background-color: #eee;
-    color: black;
-}
-.border{
-    border: 1px solid black;
-}
 .首页{
-    
     background-image: url("../assets/background.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -111,6 +108,33 @@ export default {
     height: 100%;
     overflow: auto;
 }
+
+.navigation{
+    background-color: #eee; 
+    height: 52px; 
+    position: fixed; 
+    width: 100%;
+}
+.t{
+    border: 1px solid black;
+}
+.group{
+    display: inline;
+}
+.btn{
+    padding: 8px 10px;
+    vertical-align: center;
+    margin: 10px;
+    border: 1px solid #eee;
+    background-color: #eee;
+
+}
+.btn:hover{
+    border: 1px solid black;
+    background-color: #eee;
+    color: black;
+}
+
 
 hr{
     margin-top: 0;
@@ -127,7 +151,7 @@ hr{
     text-align: center;
     font-weight: bold;
     font-size: 100px;
-    margin-top: 30px;
+    margin-top: 84px;
     letter-spacing: 9px;
 }
 .main{
@@ -151,4 +175,32 @@ hr{
 .el-icon-arrow-down {
     font-size: 12px;
 }
+
+#popLayer {
+    display: none;
+    background-color: #d4d4d4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+@keyframes fadeIn { /* 不用CSS动画实现,display会有影响 */
+    0% { opacity: 0 }
+    100% { opacity: 0.8 }
+}
+#popBox {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 11;
+    animation-name: fadeIn;
+    animation-duration: .6s;
+}
+
 </style>
