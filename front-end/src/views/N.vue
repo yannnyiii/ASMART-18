@@ -82,7 +82,6 @@ export default {
             var popLayer = document.getElementById("popLayer");
             popBox.style.display = "block";
             popLayer.style.display = "block";
-            popBox.style.opacity = 0.8;
         },
         login_back () {
             var popBox = document.getElementById("popBox");
