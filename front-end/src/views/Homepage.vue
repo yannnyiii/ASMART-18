@@ -15,7 +15,7 @@
           
         </el-dropdown-menu>
         </el-dropdown>  
-         <el-dropdown size="small" style="float: left;margin-left:0;">
+        <el-dropdown size="small" style="float: left;margin-left:0;">
             <el-button class="btn" size="medium">
                 更多<i class="el-icon-arrow-down el-icon--right"></i>
             </el-button>
@@ -29,8 +29,9 @@
             
            
             <el-button plain class="right btn" size="small" icon="iconfont myicon-wode" @click="login"> 登录</el-button>
-            <el-button plain class="right btn" size="small" icon="iconfont myicon-zhuce"> 注册</el-button>
-        
+            <router-link to="/register">
+                <el-button plain class="right btn" size="small" icon="iconfont myicon-zhuce"> 注册</el-button>
+            </router-link>
             <el-input placeholder="请输入内容" v-model="input1"  size="small"
                 class="right" style="width:200px;margin-top:10px;margin-right:20px;">
                
@@ -71,17 +72,12 @@ export default {
         }
     },
     methods: {
-        getMeal() {
-      
-        },
-        login () {
-
-        },
         login () {
             var popBox = document.getElementById("popBox");
             var popLayer = document.getElementById("popLayer");
             popBox.style.display = "block";
             popLayer.style.display = "block";
+			popBox.style.opacity = 0.8;
         },
         login_back () {
             var popBox = document.getElementById("popBox");
